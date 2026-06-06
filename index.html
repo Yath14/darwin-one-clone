@@ -23,6 +23,7 @@
     =========================== -->
 
     <header class="navbar">
+
         <div class="nav-container">
 
             <!-- Logo -->
@@ -30,22 +31,37 @@
                 <img src="assets/images/dl.png" alt="Dharwin One Logo">
             </a>
 
+            <!-- Burger Menu -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <!-- Navigation -->
-            <nav class="nav-links">
+            <nav class="nav-links" id="nav-links">
+
                 <a href="#">Product</a>
                 <a href="#">Agents</a>
                 <a href="#">Solutions</a>
                 <a href="#">Resources</a>
                 <a href="#">Pricing</a>
+
+                <!-- Mobile CTA -->
+                <a href="#" class="mobile-btn">
+                    Book a demo →
+                </a>
+
             </nav>
 
-            <!-- CTA Button -->
+            <!-- Desktop CTA -->
             <a href="#" class="demo-btn">
                 Book a demo
                 <span>→</span>
             </a>
 
         </div>
+
     </header>
 
     <!-- ==========================
@@ -53,7 +69,9 @@
     =========================== -->
 
     <main>
+
         <!-- Add your website sections here -->
+
     </main>
 
     <!-- ==========================
@@ -86,16 +104,25 @@
 
             <!-- Column 3 -->
             <div class="footer-column payment-column">
+
                 <h4>Payment</h4>
 
                 <div class="payment-icons">
+
                     <img src="assets/images/master.jpg" alt="Mastercard">
-                    <img src="assets/images/ChatGPT Image Jun 6, 2026, 10_57_39 AM.png" alt="Google Pay">
+
+                    <img src="assets/images/google-pay.png" alt="Google Pay">
+
                     <img src="assets/images/ap.jpg" alt="Apple Pay">
+
                     <img src="assets/images/amx.jpg" alt="American Express">
+
                     <img src="assets/images/pp.png" alt="PayPal">
+
                     <img src="assets/images/visa.jpg" alt="Visa">
+
                 </div>
+
             </div>
 
         </div>
@@ -105,32 +132,53 @@
         <div class="social-icons">
 
             <a href="#" aria-label="Facebook">
-                <img src="assets/images/Fb-3.jpg" alt="">
+                <img src="assets/images/fb.png" alt="Facebook">
             </a>
 
             <a href="#" aria-label="Instagram">
-                <img src="assets/images/int.jpg" alt="">
+                <img src="assets/images/insta.png" alt="Instagram">
             </a>
 
             <a href="#" aria-label="Pinterest">
-                <img src="assets/images/pinterest.png" alt="">
+                <img src="assets/images/pintrest.png" alt="Pinterest">
             </a>
 
             <a href="#" aria-label="YouTube">
-                <img src="assets/images/youtube.png" alt="">
+                <img src="assets/images/yt.png" alt="YouTube">
             </a>
 
             <a href="#" aria-label="Twitter">
-                <img src="assets/images/twitter.png" alt="">
+                <img src="assets/images/twitter.png" alt="Twitter">
             </a>
 
             <a href="#" aria-label="LinkedIn">
-                <img src="assets/images/linkedin.png" alt="">
+                <img src="assets/images/l2.jpg" alt="LinkedIn">
             </a>
 
         </div>
 
     </footer>
+
+    <!-- ==========================
+         BURGER MENU SCRIPT
+    =========================== -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuToggle = document.getElementById("menu-toggle");
+            const navLinks = document.getElementById("nav-links");
+
+            if (menuToggle && navLinks) {
+
+                menuToggle.addEventListener("click", function () {
+                    navLinks.classList.toggle("active");
+                });
+
+            }
+
+        });
+    </script>
 
 </body>
 </html>
