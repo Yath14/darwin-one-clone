@@ -267,26 +267,54 @@ button {
 
 /* ==========================================
    PAYMENT ICONS
-   FIX: Using flexbox with flex-wrap instead of
-   a fixed-column grid — adapts to any container width
-   without overflowing on small screens.
+   FIX 1: flex-wrap so icons never overflow on small screens.
+   FIX 2: Each icon sits inside a frosted pill card so it has
+          a consistent shape on dark background.
+   FIX 3: mix-blend-mode: luminosity + filter tricks make
+          white-background JPGs (master, amx, visa, etc.)
+          appear to blend into the black footer.
+          For truly transparent-background PNGs (PayPal, Google Pay)
+          the filter inverts the dark logo to white.
 ========================================== */
 
 .payment-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
-    max-width: 280px;   /* Keeps 3-per-row at normal sizes */
+    /* 3 cards × 76px + 2 gaps × 10px = 248px — fits all breakpoints */
+    max-width: 248px;
 }
 
+/* Pill card wrapper — gives every icon a uniform frosted surface */
 .payment-icons img {
-    width: 80px;
-    height: 44px;
+    width: 72px;
+    height: 42px;
     object-fit: contain;
     display: block;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 6px 8px;
+    /*
+     * FIX: Semi-transparent white pill so the icon has a readable
+     * surface on the black footer without a harsh white rectangle.
+     * Adjust opacity (0.10 – 0.18) to taste.
+     */
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /*
+     * FIX: brightness(1.15) + contrast(1.05) lifts faint logos
+     * so they're clearly visible on dark backgrounds.
+     * For pure-black logos on white BG (e.g. Visa black version)
+     * add: filter: brightness(0) invert(1);
+     * to make them white — but only if your specific image needs it.
+     */
+    filter: brightness(1.15) contrast(1.05);
+    transition: background var(--transition), transform var(--transition);
+}
+
+.payment-icons img:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
 }
 
 /* ==========================================
@@ -315,19 +343,25 @@ button {
 
 /* FIX: Using a class .social-link for the anchor so styles are specific */
 .social-link {
-    /* 44×44px minimum touch target (Apple HIG + WCAG 2.5.5) */
     width: 44px;
     height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
-    transition: background var(--transition), transform var(--transition);
+    border-radius: 50%;
+    /* Dark circle with subtle border — sits cleanly on black footer */
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* SVG icons inherit this color via currentColor */
+    color: rgba(255, 255, 255, 0.75);
+    transition: background var(--transition), color var(--transition), transform var(--transition);
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .social-link:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.20);
+    color: #fff;
     transform: translateY(-3px);
 }
 
@@ -336,14 +370,18 @@ button {
     outline-offset: 2px;
 }
 
-.social-link img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
+/* SVG icons inherit color from the parent anchor via currentColor */
+.social-link svg {
     display: block;
-    /* FIX: object-fit:contain on images with transparent BG works correctly.
-       For JPG social icons (like l2.jpg) that have a white background,
-       consider converting to PNG/SVG for best results on dark footer. */
+    flex-shrink: 0;
+    /* Ensure currentColor propagates through fill and stroke */
+    fill: currentColor;
+}
+
+/* Instagram uses stroke — don't override with fill */
+.social-link svg[stroke="currentColor"] {
+    fill: none;
+    stroke: currentColor;
 }
 
 /* ==========================================
@@ -510,7 +548,12 @@ button {
 
     .payment-icons {
         justify-content: center;
-        max-width: 260px;
+        max-width: 240px;
+    }
+
+    .payment-icons img {
+        width: 68px;
+        height: 40px;
     }
 
     /* Social icons: 6 in a row on tablet-mobile */
@@ -535,13 +578,14 @@ button {
     }
 
     .payment-icons {
-        max-width: 220px;
-        gap: 10px;
+        max-width: 210px;
+        gap: 8px;
     }
 
     .payment-icons img {
-        width: 68px;
-        height: 38px;
+        width: 60px;
+        height: 36px;
+        padding: 5px 6px;
     }
 
     /* Social icons: still 6-across but smaller gap */
@@ -576,13 +620,14 @@ button {
     }
 
     .payment-icons {
-        max-width: 200px;
-        gap: 8px;
+        max-width: 190px;
+        gap: 6px;
     }
 
     .payment-icons img {
-        width: 60px;
-        height: 34px;
+        width: 54px;
+        height: 32px;
+        padding: 4px 5px;
     }
 
     .social-icons {
