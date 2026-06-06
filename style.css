@@ -12,6 +12,7 @@ body{
     font-family:'Inter', sans-serif;
     background:#f8f8f8;
     color:#222;
+    overflow-x:hidden;
 }
 
 /* ==========================================
@@ -33,6 +34,7 @@ body{
     padding:12px 24px;
     display:flex;
     align-items:center;
+    justify-content:space-between;
 }
 
 /* ==========================================
@@ -40,7 +42,6 @@ body{
 ========================================== */
 
 .logo{
-    width:220px;
     display:flex;
     align-items:center;
     text-decoration:none;
@@ -57,11 +58,11 @@ body{
 ========================================== */
 
 .nav-links{
-    flex:1;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     gap:38px;
+    flex:1;
 }
 
 .nav-links a{
@@ -152,17 +153,24 @@ body{
    PAYMENT LOGOS
 ========================================== */
 
+.payment-column{
+    min-width:320px;
+}
+
 .payment-icons{
     display:grid;
-    grid-template-columns:repeat(3,auto);
-    gap:18px 24px;
+    grid-template-columns:repeat(3,90px);
+    justify-content:center;
     align-items:center;
+    gap:25px;
 }
 
 .payment-icons img{
-    height:28px;
-    width:auto;
+    width:80px;
+    height:40px;
     object-fit:contain;
+    display:block;
+    margin:auto;
 }
 
 /* ==========================================
@@ -174,7 +182,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:45px;
+    gap:40px;
+    flex-wrap:wrap;
 }
 
 .social-icons a{
@@ -204,14 +213,6 @@ body{
         padding:12px 20px;
     }
 
-    .logo{
-        width:auto;
-    }
-
-    .logo img{
-        height:38px;
-    }
-
     .nav-links{
         gap:20px;
     }
@@ -229,11 +230,6 @@ body{
     .footer-container{
         gap:60px;
         flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .social-icons{
-        gap:30px;
     }
 }
 
@@ -245,16 +241,14 @@ body{
 
     .nav-container{
         flex-direction:column;
+        justify-content:center;
+        align-items:center;
         gap:15px;
-        padding:12px 16px;
-    }
-
-    .logo{
-        width:auto;
+        padding:15px;
     }
 
     .logo img{
-        height:34px;
+        height:38px;
     }
 
     .nav-links{
@@ -266,14 +260,17 @@ body{
     }
 
     .nav-links a{
-        font-size:13px;
+        font-size:14px;
     }
 
     .demo-btn{
-        min-width:140px;
-        height:42px;
-        font-size:13px;
+        width:180px;
+        min-width:auto;
+        height:44px;
+        font-size:14px;
     }
+
+    /* Footer */
 
     .footer{
         padding:50px 20px 30px;
@@ -290,21 +287,23 @@ body{
         align-items:center;
     }
 
+    .payment-column{
+        min-width:auto;
+    }
+
     .payment-icons{
-        grid-template-columns:repeat(3,1fr);
-        justify-items:center;
+        grid-template-columns:repeat(3,80px);
         gap:15px;
     }
 
     .payment-icons img{
-        height:28px;
-        max-width:80px;
+        width:70px;
+        height:35px;
     }
 
     .social-icons{
         margin-top:40px;
         gap:22px;
-        flex-wrap:wrap;
     }
 
     .social-icons img{
@@ -320,11 +319,11 @@ body{
 @media screen and (max-width:480px){
 
     .nav-container{
-        padding:10px 12px;
+        padding:12px;
     }
 
     .logo img{
-        height:30px;
+        height:34px;
     }
 
     .nav-links{
@@ -336,9 +335,9 @@ body{
     }
 
     .demo-btn{
-        min-width:120px;
-        height:38px;
-        font-size:12px;
+        width:160px;
+        height:40px;
+        font-size:13px;
     }
 
     .demo-btn span{
@@ -350,28 +349,29 @@ body{
     }
 
     .footer-column h4{
-        font-size:14px;
+        font-size:15px;
     }
 
     .footer-column a{
-        font-size:12px;
+        font-size:13px;
     }
 
     .payment-icons{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
+        grid-template-columns:repeat(2,90px);
+        gap:15px;
     }
 
     .payment-icons img{
-        height:24px;
+        width:70px;
+        height:32px;
     }
 
     .social-icons{
-        gap:16px;
+        gap:15px;
     }
 
     .social-icons img{
-        width:18px;
-        height:18px;
+        width:20px;
+        height:20px;
     }
 }
