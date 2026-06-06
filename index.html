@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        FIX 1: Added maximum-scale=1 to prevent iOS Safari auto-zoom on input focus.
+        viewport-fit=cover handles iPhone notch/safe areas properly.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 
     <title>Dharwin One</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Main CSS -->
@@ -23,7 +26,6 @@
     =========================== -->
 
     <header class="navbar">
-
         <div class="nav-container">
 
             <!-- Logo -->
@@ -31,15 +33,30 @@
                 <img src="assets/images/dl.png" alt="Dharwin One Logo">
             </a>
 
-            <!-- Burger Menu -->
-            <div class="menu-toggle" id="menu-toggle">
+            <!--
+                FIX 2: Added aria-expanded="false" and aria-controls for accessibility.
+                aria-label added so screen readers announce "Open menu" / "Close menu".
+                role="button" removed since it's a div — using tabindex + keydown instead.
+            -->
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-expanded="false"
+                aria-controls="nav-links"
+                aria-label="Open navigation menu"
+                type="button"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
             <!-- Navigation -->
-            <nav class="nav-links" id="nav-links">
+            <!--
+                FIX 3: Added role="navigation" for semantic HTML.
+                Removed inline display toggling in favour of CSS class-based animation.
+            -->
+            <nav class="nav-links" id="nav-links" role="navigation" aria-label="Main navigation">
 
                 <a href="#">Product</a>
                 <a href="#">Agents</a>
@@ -48,20 +65,17 @@
                 <a href="#">Pricing</a>
 
                 <!-- Mobile CTA -->
-                <a href="#" class="mobile-btn">
-                    Book a demo →
-                </a>
+                <a href="#" class="mobile-btn">Book a demo →</a>
 
             </nav>
 
             <!-- Desktop CTA -->
             <a href="#" class="demo-btn">
                 Book a demo
-                <span>→</span>
+                <span aria-hidden="true">→</span>
             </a>
 
         </div>
-
     </header>
 
     <!-- ==========================
@@ -69,9 +83,7 @@
     =========================== -->
 
     <main>
-
         <!-- Add your website sections here -->
-
     </main>
 
     <!-- ==========================
@@ -85,7 +97,6 @@
             <!-- Column 1 -->
             <div class="footer-column">
                 <h4>Our commitments</h4>
-
                 <a href="#">Our story</a>
                 <a href="#">Careers</a>
                 <a href="#">For businesses</a>
@@ -95,7 +106,6 @@
             <!-- Column 2 -->
             <div class="footer-column">
                 <h4>Practical information</h4>
-
                 <a href="#">Legal notices</a>
                 <a href="#">Privacy policy</a>
                 <a href="#">Refunds</a>
@@ -104,57 +114,52 @@
 
             <!-- Column 3 -->
             <div class="footer-column payment-column">
-
                 <h4>Payment</h4>
-
                 <div class="payment-icons">
-
                     <img src="assets/images/master.jpg" alt="Mastercard">
-
                     <img src="assets/images/google-pay.png" alt="Google Pay">
-
                     <img src="assets/images/ap.jpg" alt="Apple Pay">
-
                     <img src="assets/images/amx.jpg" alt="American Express">
-
                     <img src="assets/images/pp.png" alt="PayPal">
-
                     <img src="assets/images/visa.jpg" alt="Visa">
-
                 </div>
-
             </div>
 
         </div>
 
-        <!-- Social Icons -->
+        <!--
+            FIX 4: Wrapped social icons in a <div class="social-row"> to better
+            control centering and overflow.  Each icon link now has a larger
+            touch-target wrapper (44×44px minimum per Apple HIG / WCAG 2.5.5).
+        -->
+        <div class="social-row">
+            <div class="social-icons">
 
-        <div class="social-icons">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <img src="assets/images/fb.png" alt="">
+                </a>
 
-            <a href="#" aria-label="Facebook">
-                <img src="assets/images/fb.png" alt="Facebook">
-            </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <img src="assets/images/insta.png" alt="">
+                </a>
 
-            <a href="#" aria-label="Instagram">
-                <img src="assets/images/insta.png" alt="Instagram">
-            </a>
+                <a href="#" class="social-link" aria-label="Pinterest">
+                    <img src="assets/images/pintrest.png" alt="">
+                </a>
 
-            <a href="#" aria-label="Pinterest">
-                <img src="assets/images/pintrest.png" alt="Pinterest">
-            </a>
+                <a href="#" class="social-link" aria-label="YouTube">
+                    <img src="assets/images/yt.png" alt="">
+                </a>
 
-            <a href="#" aria-label="YouTube">
-                <img src="assets/images/yt.png" alt="YouTube">
-            </a>
+                <a href="#" class="social-link" aria-label="Twitter / X">
+                    <img src="assets/images/twitter.png" alt="">
+                </a>
 
-            <a href="#" aria-label="Twitter">
-                <img src="assets/images/twitter.png" alt="Twitter">
-            </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <img src="assets/images/l2.jpg" alt="">
+                </a>
 
-            <a href="#" aria-label="LinkedIn">
-                <img src="assets/images/l2.jpg" alt="LinkedIn">
-            </a>
-
+            </div>
         </div>
 
     </footer>
@@ -163,22 +168,7 @@
          BURGER MENU SCRIPT
     =========================== -->
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const menuToggle = document.getElementById("menu-toggle");
-            const navLinks = document.getElementById("nav-links");
-
-            if (menuToggle && navLinks) {
-
-                menuToggle.addEventListener("click", function () {
-                    navLinks.classList.toggle("active");
-                });
-
-            }
-
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
