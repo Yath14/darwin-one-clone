@@ -12,14 +12,10 @@
 
 <body>
 
-    <!-- ==========================
-         DARK OVERLAY (mobile sidebar)
-    =========================== -->
+    <!-- DARK OVERLAY (mobile sidebar) -->
     <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-    <!-- ==========================
-         HEADER
-    =========================== -->
+    <!-- HEADER -->
     <header class="navbar">
         <div class="nav-container">
 
@@ -56,9 +52,7 @@
         </div>
     </header>
 
-    <!-- ==========================
-         MOBILE SIDEBAR DRAWER
-    =========================== -->
+    <!-- MOBILE SIDEBAR DRAWER -->
     <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
 
         <div class="drawer-header">
@@ -87,9 +81,7 @@
 
     </div>
 
-    <!-- ==========================
-         MAIN CONTENT
-    =========================== -->
+    <!-- MAIN CONTENT -->
     <main>
 
         <!-- HERO -->
@@ -119,43 +111,34 @@
             </div>
         </section>
 
+        <!-- HERO COLLAGE -->
         <section class="hero-collage">
+            <div class="hero-collage-wrapper">
 
-    <div class="hero-collage-wrapper">
+                <img src="assets/images/dashboard-desktop.png"
+                     alt="Dashboard"
+                     class="main-dashboard">
 
-        <!-- Main Dashboard -->
-        <img src="assets/images/dashboard-desktop.png"
-             alt="Dashboard"
-             class="main-dashboard">
+                <img src="assets/images/card-projects.png"
+                     alt=""
+                     class="floating-card top-left">
 
-        <!-- Top Left -->
-        <img src="assets/images/card-projects.png"
-             alt=""
-             class="floating-card top-left">
+                <img src="assets/images/card-files.png"
+                     alt=""
+                     class="floating-card top-right">
 
-        <!-- Top Right -->
-        <img src="assets/images/card-files.png"
-             alt=""
-             class="floating-card top-right">
+                <img src="assets/images/card-metrics.png"
+                     alt=""
+                     class="floating-card bottom-left">
 
-        <!-- Bottom Left -->
-        <img src="assets/images/card-metrics.png"
-             alt=""
-             class="floating-card bottom-left">
+                <img src="assets/images/card-tasks.png"
+                     alt=""
+                     class="floating-card bottom-right">
 
-        <!-- Bottom Right -->
-        <img src="assets/images/card-tasks.png"
-             alt=""
-             class="floating-card bottom-right">
+            </div>
+        </section>
 
-    </div>
-
-</section>
-
-
-        <!-- ==========================
-             AGENTS SECTION
-        =========================== -->
+        <!-- AGENTS SECTION -->
         <section class="agents-section" id="agents">
             <div class="agents-container">
 
@@ -195,303 +178,290 @@
 
     </main>
 
+    <!-- DASHBOARD SHOWCASE
+         Desktop: agent name LEFT + "Explore my skills" button RIGHT above frame, side previews peek in
+         Mobile:  avatar + name stacked centered above frame, big green button below
+    -->
     <section class="dashboard-showcase">
 
-    <div class="showcase-wrapper">
+        <div class="showcase-wrapper">
 
-        <div class="side-preview left-preview">
-            <img src="assets/images/d3.png" alt="">
-        </div>
-
-        <div class="dashboard-frame">
-
-            <div class="frame-header">
-
-                <div class="agent-info">
-                    <img src="assets/images/a2.png" alt="">
+            <!-- Agent header row:
+                 Desktop → flex-row: [avatar + name] on left, [white pill btn] on right
+                 Mobile  → flex-col: avatar on top, name below, centered (btn hidden)
+            -->
+            <div class="showcase-agent-header">
+                <div class="showcase-agent-name">
+                    <img src="assets/images/a2.png" alt="Marketing Agent">
                     <span>Marketing Agent</span>
                 </div>
+                <a href="#" class="showcase-desktop-btn">Explore my skills →</a>
+            </div>
 
-                <a href="#" class="skills-btn">
-                    Explore my skills →
-                </a>
+            <!-- Frame row: side previews + main dashboard -->
+            <div class="showcase-frame-row">
+
+                <div class="side-preview left-preview">
+                    <img src="assets/images/d3.png" alt="">
+                </div>
+
+                <div class="dashboard-frame">
+                    <img
+                        src="assets/images/d2.png"
+                        class="dashboard-image"
+                        alt="Marketing Agent Dashboard"
+                    >
+                </div>
+
+                <div class="side-preview right-preview">
+                    <img src="assets/images/d1.png" alt="">
+                </div>
 
             </div>
 
-            <img
-                src="assets/images/d2.png"
-                class="dashboard-image"
-                alt=""
-            >
+            <!-- Mobile-only big green button shown below frame -->
+            <a href="#" class="showcase-skills-btn">
+                Explore my skills →
+            </a>
 
         </div>
 
-        <div class="side-preview right-preview">
-            <img src="assets/images/d1.png" alt="">
-        </div>
+    </section>
 
-    </div>
-
-</section>
-
-</section>
-
+    <!-- WORKFLOW SECTION -->
     <section class="workflow-section">
 
-    <div class="workflow-container">
+        <div class="workflow-container">
 
-        <div class="workflow-top">
+            <div class="workflow-top">
 
-            <div class="workflow-left">
+                <div class="workflow-left">
+                    <h2 class="workflow-title">
+                        Workflows
+                        <span class="workflow-arrow">↴</span>
+                        <br>
+                        that don't wait
+                    </h2>
+                </div>
 
-                <h2 class="workflow-title">
-                    Workflows
-                    <span class="workflow-arrow">↴</span>
-                    <br>
-                    that don't wait
-                </h2>
-
-            </div>
-
-            <div class="workflow-right">
-
-                <p class="workflow-text">
-                    <strong>
-                        Tasks, files, approvals, and updates stay
-                        connected in Dharwin One.
-                    </strong>
-
-                    When one step is done, the next one is ready —
-                    assigned, drafted, or sent for review.
-                    No one has to ask what's pending, who owns it,
-                    or where the work stands.
-                </p>
-
-                <a href="#" class="workflow-btn">
-                    Get Started →
-                </a>
+                <div class="workflow-right">
+                    <p class="workflow-text">
+                        <strong>
+                            Tasks, files, approvals, and updates stay
+                            connected in Dharwin One.
+                        </strong>
+                        When one step is done, the next one is ready —
+                        assigned, drafted, or sent for review.
+                        No one has to ask what's pending, who owns it,
+                        or where the work stands.
+                    </p>
+                    <a href="#" class="workflow-btn">
+                        Get Started →
+                    </a>
+                </div>
 
             </div>
 
-        </div>
-
-        <div class="workflow-status-row">
-
-            <div class="status-pill status-green">
-                ✓ Complete
-            </div>
-
-            <div class="status-pill status-red">
-                ✕ Rejected
-            </div>
-
-            <div class="status-pill status-yellow">
-                ! In Progress
-            </div>
-
-            <div class="status-pill status-orange">
-                ↻ In Review
-            </div>
-
-            <div class="status-pill status-purple">
-                ★ Fresh For Feedback
-            </div>
-
-            <div class="status-pill status-blue">
-                i Needs More Info
-            </div>
-
-            <div class="status-pill status-gray">
-                ▣ Archived
+            <div class="workflow-status-row">
+                <div class="status-pill status-green">✓ Complete</div>
+                <div class="status-pill status-red">✕ Rejected</div>
+                <div class="status-pill status-yellow">! In Progress</div>
+                <div class="status-pill status-orange">↻ In Review</div>
+                <div class="status-pill status-purple">★ Fresh For Feedback</div>
+                <div class="status-pill status-blue">i Needs More Info</div>
+                <div class="status-pill status-gray">▣ Archived</div>
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-
+    <!-- CONTEXT SECTION -->
     <section class="context-section">
 
-    <div class="context-container">
+        <div class="context-container">
 
-        <div>
-            <div class="context-label">
-                WORKS WITH THE TOOLS ALREADY IN YOUR WORKFLOW
+            <div>
+                <div class="context-label">
+                    WORKS WITH THE TOOLS ALREADY IN YOUR WORKFLOW
+                </div>
+                <h2 class="context-title">
+                    Context<br>
+                    before output
+                </h2>
             </div>
 
-            <h2 class="context-title">
-                Context<br>
-                before output
-            </h2>
-        </div>
-
-        <div class="context-text">
-            <strong>Agents work better when they know the work.</strong>
-            Connect the tools your team already uses and bring
-            that context into Dharwin One. Agents can work with
-            project data, documents, conversations, assets, and
-            approvals without your team repeating the same
-            details again.
-        </div>
-
-    </div>
-
-    <div class="tools-strip">
-        <div class="tools-strip-container">
-
-            <div class="tool-item">
-                <img src="assets/images/drive.png" alt="">
-            </div>
-
-            <div class="tool-item">
-                <img src="assets/images/slack.png" alt="">
-            </div>
-
-            <div class="tool-item">
-                <img src="assets/images/mail.png" alt="">
-            </div>
-
-            <div class="tool-item">
-                <img src="assets/images/git.png" alt="">
-            </div>
-
-            <div class="tool-item">
-                <img src="assets/images/notion.png" alt="">
-            </div>
-
-            <div class="tool-item">
-                <img src="assets/images/sheets.png" alt="">
+            <div class="context-text">
+                <strong>Agents work better when they know the work.</strong>
+                Connect the tools your team already uses and bring
+                that context into Dharwin One. Agents can work with
+                project data, documents, conversations, assets, and
+                approvals without your team repeating the same
+                details again.
             </div>
 
         </div>
-    </div>
 
-    
+        <!-- Tools strip -->
+        <div class="tools-strip">
+            <div class="tools-strip-container">
 
-</section>
+                <div class="tool-item">
+                    <img src="assets/images/drive.png" alt="Google Drive">
+                    <span>Drive</span>
+                </div>
 
+                <div class="tool-item">
+                    <img src="assets/images/slack.png" alt="Slack">
+                    <span>Slack</span>
+                </div>
+
+                <div class="tool-item">
+                    <img src="assets/images/mail.png" alt="Gmail">
+                    <span>Gmail</span>
+                </div>
+
+                <div class="tool-item">
+                    <img src="assets/images/git.png" alt="GitHub">
+                    <span>Github</span>
+                </div>
+
+                <div class="tool-item">
+                    <img src="assets/images/notion.png" alt="Notion">
+                    <span>Notion</span>
+                </div>
+
+                <div class="tool-item">
+                    <img src="assets/images/sheets.png" alt="Google Sheets">
+                    <span>Sheets</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Agents row — FIXED: was <section>, now <div> -->
+        <div class="agents-row">
+
+            <div class="main-user">
+                <img src="assets/images/h1.png" alt="">
+            </div>
+
+            <div class="agent-list">
+                <div class="agent"><img src="assets/images/h14.png" alt=""></div>
+                <div class="agent"><img src="assets/images/f2.png" alt=""></div>
+                <div class="agent"><img src="assets/images/f3.png" alt=""></div>
+                <div class="agent"><img src="assets/images/f1.png" alt=""></div>
+                <div class="agent"><img src="assets/images/m4.png" alt=""></div>
+                <div class="agent"><img src="assets/images/a2.png" alt=""></div>
+                <div class="agent"><img src="assets/images/a4.jpg" alt=""></div>
+                <div class="agent"><img src="assets/images/m14.png" alt=""></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTROL SECTION -->
     <section class="control-section">
 
-    <div class="control-container">
+        <div class="control-container">
 
-        <h2 class="control-title">
-            You stay in Control.
-        </h2>
+            <h2 class="control-title">
+                You stay in Control.
+            </h2>
 
-        <p class="control-description">
-            <strong>Agents can draft, check, summarize, and prepare work</strong>
-            — but your team decides what moves forward.
-            Set permissions, review outputs, track activity, and keep every action
-            visible before it reaches a client, teammate, or final delivery.
-        </p>
+            <p class="control-description">
+                <strong>Agents can draft, check, summarize, and prepare work</strong>
+                — but your team decides what moves forward.
+                Set permissions, review outputs, track activity, and keep every action
+                visible before it reaches a client, teammate, or final delivery.
+            </p>
 
-        <div class="control-grid">
+            <div class="control-grid">
 
-            <!-- Human Approval -->
-            <div class="control-card">
-
-                <div class="control-icon">
-                    <img src="assets/images/i1.png" alt="Human Approval">
+                <div class="control-card">
+                    <div class="control-card-header">
+                        <div class="control-icon">
+                            <img src="assets/images/i1.png" alt="Human Approval">
+                        </div>
+                        <h3>Human approval</h3>
+                    </div>
+                    <p>Review agent outputs before anything is sent, published, or marked complete.</p>
                 </div>
 
-                <h3>Human approval</h3>
-
-                <p>
-                    Review agent outputs before anything is sent,
-                    published, or marked complete.
-                </p>
-
-            </div>
-
-            <!-- Permissions -->
-            <div class="control-card">
-
-                <div class="control-icon">
-                    <img src="assets/images/i2.png" alt="Permissions">
+                <div class="control-card">
+                    <div class="control-card-header">
+                        <div class="control-icon">
+                            <img src="assets/images/i2.png" alt="Permissions">
+                        </div>
+                        <h3>Permissions</h3>
+                    </div>
+                    <p>Control what each agent can access, create, edit, or suggest.</p>
                 </div>
 
-                <h3>Permissions</h3>
-
-                <p>
-                    Control what each agent can access,
-                    create, edit, or suggest.
-                </p>
-
-            </div>
-
-            <!-- Activity Log -->
-            <div class="control-card">
-
-                <div class="control-icon">
-                    <img src="assets/images/i3.png" alt="Activity Log">
+                <div class="control-card">
+                    <div class="control-card-header">
+                        <div class="control-icon">
+                            <img src="assets/images/i3.png" alt="Activity Log">
+                        </div>
+                        <h3>Activity log</h3>
+                    </div>
+                    <p>See what was drafted, changed, approved, or sent — and by whom.</p>
                 </div>
 
-                <h3>Activity log</h3>
-
-                <p>
-                    See what was drafted,
-                    changed, approved, or sent —
-                    and by whom.
-                </p>
-
-            </div>
-
-            <!-- Workspace Roles -->
-            <div class="control-card">
-
-                <div class="control-icon">
-                    <img src="assets/images/i4.png" alt="Workspace Roles">
+                <div class="control-card">
+                    <div class="control-card-header">
+                        <div class="control-icon">
+                            <img src="assets/images/i4.png" alt="Workspace Roles">
+                        </div>
+                        <h3>Workspace roles</h3>
+                    </div>
+                    <p>Give founders, managers, team members, and clients the right level of access.</p>
                 </div>
-
-                <h3>Workspace roles</h3>
-
-                <p>
-                    Give founders, managers,
-                    team members, and clients
-                    the right level of access.
-                </p>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- HERO DARK -->
     <section class="hero-dark">
-    <div class="hero-dark-container">
+        <div class="hero-dark-container">
 
-        <div class="hero-badge">
-            NO SCATTERED TOOLS ✦ NO UNCLEAR HANDOFFS ✦ NO WORK STUCK IN FOLLOW-UPS
+            <div class="hero-badge">
+                NO SCATTERED TOOLS ✦ NO UNCLEAR HANDOFFS ✦ NO WORK STUCK IN FOLLOW-UPS
+            </div>
+
+            <h1 class="hero-dark-title">
+                One system, More work done
+            </h1>
+
+            <p class="hero-dark-subtitle">
+                Bring your projects, tasks, files, updates, approvals, and AI agents into one
+                workspace — built to keep work clear from start to finish.
+            </p>
+
+            <div class="hero-dark-buttons">
+                <a href="#" class="btn-green">
+                    Book a demo
+                    <span>→</span>
+                </a>
+                <a href="#" class="btn-outline">
+                    Contact Us
+                </a>
+            </div>
+
+            <div class="hero-dark-collage">
+                <img src="assets/images/dashboard-desktop.png"
+                     alt="Dashboard preview"
+                     class="hero-dark-dashboard">
+            </div>
+
         </div>
+    </section>
 
-        <h1 class="hero-dark-title">
-            One system, More work done
-        </h1>
-
-        <p class="hero-dark-subtitle">
-            Bring your projects, tasks, files, updates, approvals, and AI agents into one
-            workspace — built to keep work clear from start to finish.
-        </p>
-
-        <div class="hero-dark-buttons">
-            <a href="#" class="btn-green">
-                Book a demo
-                <span>→</span>
-            </a>
-
-            <a href="#" class="btn-outline">
-                Contact Us
-            </a>
-        </div>
-
-    </div>
-</section>
-
-    <!-- ==========================
-         FOOTER
-    =========================== -->
+    <!-- FOOTER -->
     <footer class="footer">
 
         <div class="footer-container">
